@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" type="image/png" href="favicon/weather-forecast.png">
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Weather Forecast App</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="search-box">
+            <i class="fa-sharp fa-solid fa-location-dot"></i>
+            <input id="locationInput" type="text" placeholder="Enter your location" />
+            <button class="fa-sharp fa-solid fa-magnifying-glass"></button>
+       </div>
+
+        <div class="not-found">
+            <img src="images/404.png" />
+            <p>Oops! Invalid location :/</p>
+        </div>
+
+        <div class="weatherBox fadeIn">
+            <p class="description"></p>
+            <img src="">
+            <p class="day-time"></p>
+            <p class="temperature"></p>
+            <p class="low-high"></p>
+
+        </div>
+
+        <div class="weather-details fadeIn">
+            <div class="weather-container">
+                <div class="weather-item rain">
+                    <img src="images/rain.png">
+                    <p class="rain-value"></p>
+                    <p>Rain</p>
+                </div>
+
+                <div class="weather-item wind">
+                    <img src="images/wind.png">
+                    <p class="ws-value"></p>
+                    <p>Wind Speed</p>
+                </div>
+
+                <div class="weather-item humidity">
+                    <img src="images/humidity.png">
+                    <p class="humidity-value"></p>
+                    <p>Humidity</p>
+                </div>
+            </div>
+
+            <div class="forecast-container">
+                <div class="forecast">
+                    <p>Today</p>
+                </div>
+                <div class="forecast">
+                    <button type="button" class="next-7-days-btn">Next 7 days &raquo;</button>
+                </div>
+            </div>
+
+            <div class="today-forecast">
+                <div class="today">
+                    <p>Morning</p>
+                    <img id="morning-img" src="" />
+                    <p class="morning-hl"></p>
+                </div>
+
+                <div class="today">
+                    <div class="text-container">
+                        <p>Afternoon</p>
+                    </div>
+                    <img id="afternoon-img" src="" />
+                    <p class="afternoon-hl"></p>
+                </div>
+
+                <div class="today">
+                    <p>Evening</p>
+                    <img id="evening-img" src="" />
+                    <p class="evening-hl"></p>
+                </div>
+
+                <div class="today">
+                    <p>Night</p>
+                    <img id="night-img" src="" />
+                    <p class="night-hl"></p>
+                </div>
+            </div>
+            <!--todayForecast-->
+        </div>
+        <!--weatherDetailsFadeIn-->
+    </div>
+    <!--container-->
+
+    <div class="next_seven_day">
+        <div class="arrow-container">
+            <div class="image-wrapper">
+                <img src="images/arrow.png">
+            </div>
+        </div>
+        
+        <div class="tomorrow">
+            <img id="tomorrow_img" src="" />
+            <div class="details">
+                <p style="font-size: 16px;">Tomorrow</p>
+                <p id="tom_temp" style="font-size: 25px"></p>
+                <p id="tom_tempTyp" style="font-size: 14px;"></p>
+            </div>
+            <div class="temperature">
+                <div class="weather-item rain">
+                    <img src="images/rain.png">
+                    <p id="tom_rain"></p>
+                    <p>Rain</p>
+                </div>
+
+                <div class="weather-item wind">
+                    <img src="images/wind.png" style="margin-left: 25px">
+                    <p id="tom_wind" style="margin-left: 16px"></p>
+                    <p>Wind Speed</p>
+                </div>
+
+                <div class="weather-item humidity">
+                    <img src="images/humidity.png" style="margin-left: 18px">
+                    <p id="tom_humidity" style="margin-left: 15px"></p>
+                    <p>Humidity</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="week">
+            <div class="day1">
+                <div class="day_brief">
+                    <div id="day_name_1"></div>
+                    <div id="day_img_1"></div>
+                    <div id="day_typ_1"></div>
+                </div>
+                <div class="day_temp">
+                    <div id="day_ht_1"></div>
+                    <div id="day_lt_1"></div>
+                </div>
+            </div>
+            <div class="day2">
+                <div class="day_brief">
+                    <div id="day_name_2"></div>
+                    <div id="day_img_2"></div>
+                    <div id="day_typ_2"></div>
+                </div>
+                <div class="day_temp">
+                    <div id="day_ht_2"></div>
+                    <div id="day_lt_2"></div>
+                </div>
+            </div>
+            <div class="day3">
+                <div class="day_brief">
+                    <div id="day_name_3"></div>
+                    <div id="day_img_3"></div>
+                    <div id="day_typ_3"></div>
+                </div>
+                <div class="day_temp">
+                    <div id="day_ht_3"></div>
+                    <div id="day_lt_3"></div>
+                </div>
+            </div>
+            <div class="day4">
+                <div class="day_brief">
+                    <div id="day_name_4"></div>
+                    <div id="day_img_4"></div>
+                    <div id="day_typ_4"></div>
+                </div>
+                <div class="day_temp">
+                    <div id="day_ht_4"></div>
+                    <div id="day_lt_4"></div>
+                </div>
+            </div>
+            <div class="day5">
+                <div class="day_brief">
+                    <div id="day_name_5"></div>
+                    <div id="day_img_5"></div>
+                    <div id="day_typ_5"></div>
+                </div>
+                <div class="day_temp">
+                    <div id="day_ht_5"></div>
+                    <div id="day_lt_5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/76ce65ae53.js" crossorigin="anonymous"></script>
+    <script src="app.js" type="module"></script>
+</body>
+
+</html>

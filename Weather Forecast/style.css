@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+    linear-gradient(355deg, #ebe8c4, #9a901d)
+}
+
+.container {
+    position: relative;
+    width: 400px;
+    height: 105px; 
+    background:#EAE0C8;
+    padding: 28px 32px;
+    overflow: hidden;
+    border-radius: 18px;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.6s ease-out;
+}
+
+.search-box  {
+    width: 100%;
+    height: min-content;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.search-box input {
+    color: #06283D;
+    width: 73%;
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-left: 5px;
+    border: none;
+    outline: none;
+    background: #fff;
+    height: 45px;
+    border-radius: 12px;
+}
+
+.search-box input::placeholder {
+    font-size: 20px;
+    font-weight: 500;
+    color: #06283D;
+    text-transform: capitalize;
+}
+
+.search-box button {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    color: #06283D;
+    background: #dff6ff;
+    border-radius: 50%;
+    font-size: 22px;
+    transition: 0.4s ease;
+}
+
+.search-box button:hover {
+    color: #fff;
+    background: #06283D;
+}
+
+.search-box i {
+    color: #06283D;
+    font-size: 28px;
+}
+
+.not-found {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    scale: 0;
+    opacity: 0;
+    display: none;
+}
+
+.not-found img {
+    width: 70%;
+}
+
+.not-found p {
+    color: #06283D;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.fadeIn {
+    animation: 0.5s fadeIn forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+.weatherBox {
+    text-align: center;
+}
+
+.weatherBox p {
+    text-align: center;
+}
+
+.weatherBox>p:first-child {
+    color: maroon;
+    font-weight: 500;
+}
+
+.weatherBox>p:nth-child(3) {
+    font-size: 20px;
+    color: maroon;
+    margin-bottom: 5px;
+}
+
+.weatherBox>p:nth-child(4) {
+    font-size: 55px;
+    margin-bottom: 5px;
+    color: maroon;
+}
+
+.weatherBox>p:last-child {
+    color: maroon;
+    margin-bottom: 5px;
+}
+
+.weatherBox img {
+    width: 30%;
+} 
+
+.weather-details .weather-container {
+    display: flex;
+    border: 1px solid #594690;
+    border-radius: 15px;
+    background: burlywood;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.weather-details .weather-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+}
+
+.weather-details .weather-item i {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.rain-value,
+.ws-value,
+.humidity-value {
+    font-size: 14px;
+    font-weight: bold;
+    color: sienna;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.weather-details .weather-container .weather-item p:last-child {
+    font-size: 12px;
+    color: #503215;
+    font-weight: 200;
+}
+
+.forecast-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.forecast-container .forecast p {
+    color: peru;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 22px;
+}
+
+.forecast .next-7-days-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: #dff6ff;
+    color: #06283D;
+    font-weight: 500;
+    border: 1px solid black;
+    border-radius: 15px;
+    transition: 0.4s ease;
+}
+
+.forecast .next-7-days-btn:hover {
+    color: #fff;
+    background: #06283D;
+}
+
+.weather-details .today-forecast {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.today {
+    flex: 1;
+    text-align: center;
+    color: rgb(49, 37, 231);
+    border: 2px solid peru;
+    border-radius: 15px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.today img {
+    width: 65%; 
+    display: block;
+    margin: 5px auto; /* Center the image within its container */
+}
+
+.today p {
+    font-size: 14px;
+}
+
+.today .text-container {
+    max-width: 100px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0 auto;
+}
+
+.next_seven_day {
+    height: 620px;
+    width: 350px;
+    background-color: #EAE0C8; 
+    border-radius: 15px;
+    display: none; 
+    flex-direction: column;
+    
+}
+
+.arrow-container {
+    display: inline-block; 
+    padding: 25px 25px; 
+    transition: background-color 0.3s; 
+}
+
+.arrow-container:hover {
+    background-color: #dcaa7a;
+}
+
+.image-wrapper img {
+    transition: transform 0.3s;
+    transform: scale(1.1); 
+}
+
+.arrow-container:hover .image-wrapper img {
+    transform: scale(1.1); 
+} 
+
+.next_seven_day .tomorrow {
+    height: 240px;
+    width: 295px;
+    background-color: burlywood;
+    color: black;
+    border-radius: 15px;
+    margin: 15px 25px 20px 25px;
+    padding: 25px;
+    justify-content: center;
+}
+
+#tomorrow_img {
+    width: 100px;
+    height: auto; 
+    margin-right: 20px;
+}
+
+.next_seven_day .tomorrow .details {
+    float: right;
+    margin-top: 10px;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.next_seven_day .tomorrow .details p {
+    margin-bottom: 10px;
+}
+
+.next_seven_day .tomorrow .temperature {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.next_seven_day .tomorrow .temperature .weather-item {
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.next_seven_day .tomorrow .temperature .weather-item i {
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+.next_seven_day .tomorrow .temperature .weather-item p {
+    font-size: 15px;
+    white-space: nowrap;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.next_seven_day .week {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 25px;
+}
+
+.next_seven_day .week .day1, .day2, .day3, .day4, .day5 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.next_seven_day .week .day_brief, .day_temp {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.week .day_brief>div {
+    width: 30px;
+}
+
+.week .day_brief [id^="day_img_"] {
+    margin-right: 30px;
+}
